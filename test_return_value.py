@@ -1,6 +1,9 @@
 import ReturnValue as rv
 import numpy as np
 
+obj = rv.get_data10(10)
+print(obj.x, obj.y, obj.w, obj.h)
+print(obj) 
 
 func1 = rv.get_data(10)
 print(func1) 

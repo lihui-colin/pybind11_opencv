@@ -37,6 +37,16 @@ MyData* get_data2(int length) {
 
 }
 
+
+MyData get_data10(int length) {
+    MyData data;
+    data.x = 10;
+    data.y = 20;
+    data.w = 30;
+    data.h = 30;
+    return data;
+}
+
 /*
 返回python list
 */
@@ -136,6 +146,8 @@ PYBIND11_MODULE(ReturnValue, m) {
     m.def("get_data2", &get_data2, py::return_value_policy::reference);
     m.def("get_data3", &get_data3, py::return_value_policy::reference);
     m.def("get_data4", &get_data4, py::return_value_policy::reference);
+    m.def("get_data10", &get_data10, py::return_value_policy::reference);
+    
     m.def("get_complex", &get_complex, py::return_value_policy::reference);
     m.def("get_matrix_eigen", &get_matrix_eigen, py::return_value_policy::reference);
     m.def("calc_mat_add", &calc_mat_add, py::return_value_policy::reference);
