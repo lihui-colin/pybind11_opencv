@@ -29,7 +29,7 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 # include_directories(${OpenCV_INCLUDE_DIRS}/opencv4)
 # include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 # include_directories(${pybind11_INCLUDE_DIR})
-
+include_directories(/usr/include/eigen3)
  
 include_directories(${3rdparty}/include)
 link_directories(${3rdparty}/lib)
@@ -60,3 +60,6 @@ SET_TARGET_PROPERTIES(AuxoCv PROPERTIES PREFIX "")
 
 install(TARGETS AuxoCv DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})
 
+add_library(ReturnValue SHARED return_value.cpp)
+SET_TARGET_PROPERTIES(ReturnValue PROPERTIES PREFIX "")
+install(TARGETS ReturnValue DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})
